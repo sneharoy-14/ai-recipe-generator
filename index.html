@@ -4,35 +4,47 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/style.css" />
     <title>AI Asian Recipe Generator</title>
   </head>
   <body>
-    <header>
-      <h1>AI Asian Recipe Generator</h1>
-    </header>
-    <main>
-      <form>
-        <input
-          type="text"
-          placeholder="create a recipe for..."
-          autofocus
-          required
-          autocomplete="off"
-        />
-        <input type="submit" />
-      </form>
-    </main>
-    <footer>
-      This AI project was coded by Sneha Dey Roy. It is
-      <a href="https://github.com/sneharoy-14/ai-recipe-generator"
-        >open-sourced on Github</a
-      >
-      and is
-      <a href="https://ai-asian-recipe-generator.netlify.app/"
-        >hosted on Netlify</a
-      >
-    </footer>
+    <div class="container">
+      <header>
+        <h1>Discover an Asian recipe</h1>
+      </header>
+      <main>
+        <form>
+          <input
+            type="text"
+            placeholder="create a recipe for..."
+            autofocus
+            required
+            autocomplete="off"
+            class="instructions"
+          />
+          <br />
+          <input type="submit" class="submit-button" />
+        </form>
+
+        <div class="suggestion-text">💡 a sweet and spicy Thai green curry</div>
+      </main>
+      <footer>
+        This AI project was coded by Sneha Dey Roy. It is
+        <a href="https://github.com/sneharoy-14/ai-recipe-generator"
+          >open-sourced on Github</a
+        >
+        and is
+        <a href="https://ai-asian-recipe-generator.netlify.app/"
+          >hosted on Netlify</a
+        >
+      </footer>
+    </div>
     <script src="src/index.js"></script>
   </body>
 </html>
