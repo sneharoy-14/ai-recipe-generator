@@ -1,24 +1,32 @@
 body {
   background-color: #fbc02d;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-  margin: 70px auto;
-  max-width: 600px;
-  text-align: center;
+  margin: 40px auto;
+  padding: 20px;
+  max-width: 700px;
 }
 
-h1 {
+header h1 {
   font-family: "Playfair Display", serif;
   font-size: 50px;
   text-align: center;
   color: #2e2e2e;
+  margin-bottom: 20px;
+}
+
+form {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .instructions {
-  padding: 15px;
-  margin: 7px auto;
-  width: 87%;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+  width: 100%;
   display: inline-block;
   border: 4px solid #c41e3a;
   border-radius: 30px;
@@ -32,15 +40,16 @@ h1 {
   text-align: center;
 }
 .submit-button {
-  padding: 7px;
+  padding: 10px 20px;
   margin: 7px auto;
   width: 90%;
   display: inline-block;
   border-radius: 30px;
-  border: 4px solid #c41e3a;
+  border: none;
   background-color: #c41e3a;
   color: #f5e6c8;
-  font-size: 15px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .suggestion-text {
@@ -48,14 +57,59 @@ h1 {
   font-size: 18px;
   color: #2e2e2e;
   text-align: center;
-  margin: 5px auto;
+  margin: auto;
   padding: 7px;
   background-color: #ffd366;
-  display: inline-block;
+  display: block;
+  width: fit-content;
   border-radius: 30px;
 }
 
+.results {
+  background-color: #f5e6c8;
+  border: none;
+  border-radius: 16px;
+  margin-top: 30px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.name {
+  font-family: "Playfair Display", serif;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ingredients,
+.steps {
+  width: 48%;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 350;
+}
+
+@media (min-width: 768px) {
+  .results {
+    flex-direction: column;
+  }
+}
+.ingredients-steps {
+  display: flex;
+  justify-content: space-between;
+}
+.ingredients ul {
+  padding-left: 20px;
+  list-style: disc;
+  color: #2e2e2e;
+}
+.steps ol {
+  padding-left: 20px;
+  color: #c41e3a;
+}
 footer {
   font-family: "Playfair Display", serif;
   margin-top: 10px;
+  flex: 50%;
 }
