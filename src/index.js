@@ -1,46 +1,33 @@
-const recipeData = {
-  name: "Veggie Stir Fry",
-  ingredients: [
-    "1 Red Bell Pepper Sliced",
-    "2 Bok Choy Chopped",
-    "1 Medium Onion Sliced",
-    "2 Cloves Garlic Minced",
-    "1 Tablespoon Grated Ginger",
-    "3 Tablespoons Soy Sauce",
-    "1 Tablespoon Sesame Oil",
-    "1 Tablespoon Sugar",
-    "1 Teaspoon Red Pepper flakes",
-    "2 Green Onions Chopped",
-    "2 Tablespoons Vegetable Oil",
-    "Cooked Rice",
-  ],
-  steps: [
-    "Chop all the vegetables and aromatics.",
-    "Heat vegetable oil in a large wok or skillet.",
-    "Add garlic, onion, and ginger. Sauté until fragrant.",
-    "Toss in the rest of the vegetables and stir-fry for 5-6 minutes.",
-    "Pour in soy sauce, sesame oil, and sugar. Mix well.",
-    "Serve hot over cooked rice and top with green onions.",
-  ],
-};
+function displayRecipe(response) {
+  console.log("Recipe Generated");
+  console.log(response);
+  let nameElement = document.querySelector("#name");
+  nameElement.innerHTML = response.data.answer;
+}
 
 function generateRecipe(event) {
   event.preventDefault();
 
-  const nameElement = document.querySelector("#name");
-  const ingredientsList = document.querySelector("#ingredients");
-  const stepsList = document.querySelector("#steps");
+  let input = document.querySelector("#instructions").value;
 
-  nameElement.innerHTML = recipeData.name;
+  let ingredientsList = document.querySelector("#ingredients");
+  let stepsList = document.querySelector("#steps");
 
-  ingredientsList.innerHTML = recipeData.ingredients
-    .map((ingredient) => `<li>${ingredient}</li>`)
-    .join("");
+  ingredientsList.innerHTML = "";
 
-  stepsList.innerHTML = recipeData.steps
-    .map((step) => `<li>${step}</li>`)
-    .join("");
+  stepsList.innerHTML = "";
+
+  let apiKey = "babc1213f11b9atf604b57efa38oa64c";
+  let prompt = `Create an Asian recipe for ${input}`;
+  let context =
+    "You are an Asian recipe AI assistant who knows every dish from every Asian country by heart. You have strong opinions about what is authentic, and you're not afraid to say so. Keep your answers clear, concise, and confident";
+  let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+  console.log("Generating Recipe");
+  console.log(`Prompt:${prompt}`);
+  console.log(`Context:${context}`);
+
+  axios.get(apiUrl).then(displayRecipe);
 }
-
 let recipeFormElement = document.querySelector("#recipe-generator-form");
 recipeFormElement.addEventListener("submit", generateRecipe);
