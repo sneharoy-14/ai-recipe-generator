@@ -7,7 +7,7 @@ body {
 .container {
   margin: 40px auto;
   padding: 20px;
-  max-width: 700px;
+  max-width: 1000px;
 }
 
 header h1 {
@@ -71,33 +71,32 @@ form {
   border-radius: 16px;
   margin-top: 30px;
   padding: 15px;
-  display: flex;
-  flex-direction: column;
 }
 .name {
   font-family: "Playfair Display", serif;
-  font-size: 40px;
+  font-size: 28px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
 }
 
-.ingredients,
-.steps {
-  width: 48%;
-  font-family: "Playfair Display", serif;
-  font-size: 20px;
-  font-weight: 350;
+.ingredients-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 @media (min-width: 768px) {
-  .results {
-    flex-direction: column;
+  .ingredients-steps {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
   }
-}
-.ingredients-steps {
-  display: flex;
-  justify-content: space-between;
+
+  .ingredients,
+  .steps {
+    width: 50%;
+  }
 }
 .ingredients ul {
   padding-left: 20px;
