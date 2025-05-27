@@ -10,8 +10,8 @@ function generateRecipe(event) {
 
   let input = document.querySelector("#instructions").value;
 
-  let ingredientsList = document.querySelector("#ingredients");
-  let stepsList = document.querySelector("#steps");
+  let ingredientsList = document.querySelector("#ingredients ul");
+  let stepsList = document.querySelector("#steps ol");
 
   ingredientsList.innerHTML = "";
 
@@ -26,6 +26,10 @@ function generateRecipe(event) {
   console.log("Generating Recipe");
   console.log(`Prompt:${prompt}`);
   console.log(`Context:${context}`);
+
+  let recipeElement = document.querySelector("#recipe");
+  recipeElement.classList.remove("hidden");
+  recipeElement.textContent = "Generating recipe...";
 
   axios.get(apiUrl).then(displayRecipe);
 }

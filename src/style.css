@@ -7,7 +7,7 @@ body {
 .container {
   margin: 40px auto;
   padding: 20px;
-  max-width: 1000px;
+  max-width: 765px;
 }
 
 header h1 {
@@ -63,6 +63,7 @@ form {
   display: block;
   width: fit-content;
   border-radius: 30px;
+  transition: opacity 1s ease-in-out;
 }
 
 .results {
@@ -71,6 +72,9 @@ form {
   border-radius: 16px;
   margin-top: 30px;
   padding: 15px;
+}
+.hidden {
+  display: none;
 }
 .name {
   font-family: "Playfair Display", serif;
@@ -95,7 +99,7 @@ form {
 
   .ingredients,
   .steps {
-    width: 50%;
+    flex: 1;
   }
 }
 .ingredients ul {
