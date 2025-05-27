@@ -1,7 +1,7 @@
 function displayRecipe(response) {
   console.log("Recipe Generated");
   console.log(response);
-  let nameElement = document.querySelector("#name");
+  let nameElement = document.querySelector("#recipe");
   nameElement.innerHTML = response.data.answer;
 }
 
